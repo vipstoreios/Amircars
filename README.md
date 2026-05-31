@@ -8,7 +8,7 @@ Premium dark/gold car marketplace for Kia cargo trucks, built with SwiftUI, a st
 - Static admin dashboard in `admin-dashboard/`
 - Supabase schema, RLS policies, storage setup, and seed settings in `supabase/`
 - Localization for Kurdish Badini, Kurdish Sorani, and Arabic
-- Phone number login and OTP verification UI
+- Username/password login UI with Supabase Auth password endpoint support
 - Kia Bongo / Kia K2700 listing flow with USD prices
 - Listing status system: available, sold, installment
 - Chat models, chat UI, and realtime-ready service boundaries
@@ -46,4 +46,4 @@ supabase/
 
 ## Notes
 
-The app ships with local Kia cargo truck sample data for UI testing only. The code is structured so `AuthService`, `CarService`, `ChatService`, `FavoriteService`, `VerificationService`, and `UserService` can be switched to Supabase calls without changing the views.
+The app ships with bundled Kia cargo truck data so it opens cleanly before Supabase credentials are added. `AuthService` already uses the Supabase password-login endpoint when the anon key is configured, while the marketplace, chat, favorites, verification, and admin flows keep service boundaries ready for the same Supabase project.
